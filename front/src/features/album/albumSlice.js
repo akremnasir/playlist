@@ -1,15 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   albumItems: [],
   albumIsLoading: true,
 };
 
-export const VIEW_ALBUM_ITEMS = 'album/viewAlbumItems';
-export const SUCCESS_VIEW_ALBUM_ITEMS = 'album/viewAlbumItemsSuccess';
+export const VIEW_ALBUM_ITEMS = "album/viewAlbumItems";
+export const SUCCESS_VIEW_ALBUM_ITEMS = "album/viewAlbumItemsSuccess";
 
 const albumSlice = createSlice({
-  name: 'album',
+  name: "album",
   initialState,
   reducers: {
     viewAlbumItems: (state) => {
@@ -25,5 +25,6 @@ const albumSlice = createSlice({
   },
 });
 
-export const { viewAlbumItems, viewAlbumItemsSuccess, viewAlbumItemsFailure } = albumSlice.actions;    
+export const { viewAlbumItems, viewAlbumItemsSuccess, viewAlbumItemsFailure } =
+  albumSlice.actions;
 export default albumSlice.reducer;

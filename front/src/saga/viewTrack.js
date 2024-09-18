@@ -1,15 +1,18 @@
-import axios from 'axios';
-import { call, put} from 'redux-saga/effects';
+import axios from "axios";
+import { call, put } from "redux-saga/effects";
 
-import { viewTrackItemsSuccess, viewTrackItemsFailure} from '../features/track/trackSlice';
-const viewTracksUrl = 'http://localhost:5000/tracks';
+import {
+  viewTrackItemsSuccess,
+  viewTrackItemsFailure,
+} from "../features/track/trackSlice";
+const viewTracksUrl = "http://localhost:5000/tracks";
 
 const callViewTracksApi = async () => {
   try {
     const resp = await axios.get(viewTracksUrl);
     return resp.data.track;
   } catch (error) {
-    throw new Error('Error fetching track data');
+    throw new Error("Error fetching track data");
   }
 };
 

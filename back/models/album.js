@@ -11,14 +11,14 @@ const albumSchema = mongoose.Schema({
     required: [true, "please provide the artist for the album"],
   },
   genere: {
-    type: String
+    type: String,
   },
   releseDate: {
-    type: Date
+    type: Date,
   },
   cover: {
-    type: String
-  }
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("album", albumSchema);

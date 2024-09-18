@@ -10,29 +10,29 @@ const trackSchema = mongoose.Schema({
     required: [true, "please provide the artist for the track"],
   },
   genere: {
-    type: String
+    type: String,
   },
   releseDate: {
-    type: Date
-  }, 
-  liked: {
-    type: Boolean
+    type: Date,
   },
-  type:{
+  liked: {
+    type: Boolean,
+  },
+  type: {
     type: String,
     // enum: {
     //   values: ["single","album"],
     //   message: "{VALUE} is not supported",
     // },
-    default: "single"
+    default: "single",
   },
   albumId: {
     type: mongoose.Types.ObjectId,
     ref: "album",
   },
   cover: {
-    type: String
-  }
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("track", trackSchema);

@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { viewTrackItems } from '../features/track/trackSlice';
-import { viewAlbumItems } from '../features/album/albumSlice';
-import { CardContainer, TrackCardImgsDiv } from '../styled/styled';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { viewTrackItems } from "../features/track/trackSlice";
+import { viewAlbumItems } from "../features/album/albumSlice";
+import { CardContainer, TrackCardImgsDiv } from "../styled/styled";
 
-const AlbumCard = ({ item: cardItem }) => { 
+const AlbumCard = ({ item: cardItem }) => {
   const dispatch = useDispatch();
   const { albumItems, albumIsLoading } = useSelector((state) => state.album);
-  const { trackIsLoading } = useSelector((state) => state.track); 
+  const { trackIsLoading } = useSelector((state) => state.track);
   const { activeItem } = useSelector((state) => state.active);
 
   useEffect(() => {
     if (!albumIsLoading) dispatch(viewAlbumItems());
     if (!trackIsLoading) dispatch(viewTrackItems());
-  }, [dispatch]); 
+  }, [dispatch]);
 
   if (albumIsLoading || trackIsLoading) {
     return (
@@ -22,20 +22,20 @@ const AlbumCard = ({ item: cardItem }) => {
       </div>
     );
   }
-  const cardClicked = () =>{
-    dispatch(selectCard(cardItem))
-    dispatch(handleTrackOrAlbum(activeItem))
-  }
+  const cardClicked = () => {
+    dispatch(selectCard(cardItem));
+    dispatch(handleTrackOrAlbum(activeItem));
+  };
   return (
     <CardContainer onClick={cardClicked}>
       {cardItem?.title ? (
         <>
           <h3>{cardItem.title}</h3>
-          <p>{cardItem.releseDate.slice(0,10) || 'Unknown Release Date'}</p>
-          <TrackCardImgsDiv> 
-            <img src='/icons/icons8-next-100.png' alt='play' width={22}/>
-            <img src='/icons/icons8-play-100.png' alt='play' width={42}/>
-            <img src='/icons/icons8-next-100.png' alt='play' width={22}/>
+          <p>{cardItem.releseDate.slice(0, 10) || "Unknown Release Date"}</p>
+          <TrackCardImgsDiv>
+            <img src="/icons/icons8-next-100.png" alt="play" width={22} />
+            <img src="/icons/icons8-play-100.png" alt="play" width={42} />
+            <img src="/icons/icons8-next-100.png" alt="play" width={22} />
           </TrackCardImgsDiv>
         </>
       ) : (

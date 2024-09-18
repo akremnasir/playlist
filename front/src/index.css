@@ -1,4 +1,3 @@
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -17,7 +16,12 @@ body {
   background-size: cover;
 }
 
-h1, h2, h3, h4, h5, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
   margin: 0;
   padding: 2px;
 }
@@ -27,7 +31,7 @@ p {
 
 button {
   border-radius: 8px;
-  border: 1px solid #0C8AEB;
+  border: 1px solid #0c8aeb;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -35,7 +39,7 @@ button {
   background-color: transparent;
   cursor: pointer;
   transition: border-color 0.25s;
-  color: #0C8AEB;
+  color: #0c8aeb;
 }
 button:hover {
   border-color: #646cff;
@@ -44,4 +48,3 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-

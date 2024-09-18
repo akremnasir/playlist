@@ -1,22 +1,22 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   selectedCard: {},
-  trackOrAlbum: 'track'
+  trackOrAlbum: "track",
 };
 
-const SelectedCardSlice= createSlice({
-  name: 'selected',
+const SelectedCardSlice = createSlice({
+  name: "selected",
   initialState,
   reducers: {
     selectCard: (state, action) => {
-      state.selectedCard = action.payload
+      state.selectedCard = action.payload;
     },
     handleTrackOrAlbum: (state, action) => {
-      state.trackOrAlbum = action.payload
-    }
+      state.trackOrAlbum = action.payload;
+    },
   },
 });
 
-export const { selectCard, handleTrackOrAlbum } = SelectedCardSlice.actions;    
+export const { selectCard, handleTrackOrAlbum } = SelectedCardSlice.actions;
 export default SelectedCardSlice.reducer;
